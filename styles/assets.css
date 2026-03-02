@@ -1,0 +1,14 @@
+.headerFoodGroups {
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #E76C1F;
+    color: white;
+    padding-left: 200px;
+}
+
+.foodGroupImage {
+    width: 90px;
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 48px;
+}
