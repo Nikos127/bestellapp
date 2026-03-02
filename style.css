@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+
+}
+
+header {
+    max-width: 1920px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E76C1F;
+    padding: 48px 120px 24px;
+
+}
+
+.navbar button {
+    filter: invert();
+}
+
+.navbar-toggler:hover {
+    filter: brightness(3);
+}
+
+.headerImage img {
+    height: 480px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 25%;
+    max-width: 1920px;
+}
+
+.roundImage {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+
+}
+
+.roundImage img {
+    width: 150px;
+    height: 150px;
+    border: 13px solid #fdeadc;
+    border-radius: 100%;
+    position: absolute;
+    top: -75px;
+    background-color: #cae3f7;
+}
