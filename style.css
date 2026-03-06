@@ -41,11 +41,21 @@ header {
     position: absolute;
     top: -100px;
     background-color: #cae3f7;
+    transform: rotate(90deg);
 }
 
 h1 {
     font-size: 48px;
     font-weight: bold;
+}
+
+p{
+    font-size: 16px;
+}
+
+h2{
+    font-size: 24px;
+    font-weight: medium;
 }
 
 .headerText {
@@ -82,4 +92,25 @@ h1 {
 
 .basket-wrapper {
     width: 300px;
+}
+
+.appetizerImage img{
+    width: 200px;
+    height: 120px;
+    padding: 8px 8px;
+    border-radius: 12px;
+    position: cover;
+}
+
+.appetizerText{
+    margin-left: 60px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:16px 64px;
+    background-color: #FACAAC;
+    
 }
