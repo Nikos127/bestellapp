@@ -49,13 +49,14 @@ h1 {
     font-weight: bold;
 }
 
-p{
+p {
     font-size: 16px;
+    font-weight: 500;
 }
 
-h2{
+h2 {
     font-size: 24px;
-    font-weight: medium;
+    font-weight: 600;
 }
 
 .headerText {
@@ -86,6 +87,10 @@ h2{
     display: flex;
 }
 
+.headerFoodGroups {
+    width: 100%;
+}
+
 .content {
     width: calc(100% - 300px);
 }
@@ -94,7 +99,16 @@ h2{
     width: 300px;
 }
 
-.appetizerImage img{
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 16px 64px;
+    background-color: #FACAAC;
+    width: calc(100% - 400px)
+}
+
+.cardImage img {
     width: 200px;
     height: 120px;
     padding: 8px 8px;
@@ -102,15 +116,17 @@ h2{
     position: cover;
 }
 
-.appetizerText{
-    margin-left: 60px;
-}
-
-.card {
+.cardTitle {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin:16px 64px;
-    background-color: #FACAAC;
-    
+    justify-content: space-between;
+
+}
+
+.cardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 8px 16px 8px 48px;
+    width: 100%;
 }
