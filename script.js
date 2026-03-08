@@ -118,12 +118,12 @@ function appetizer() {
             <div class="cardImage"><img src="${element.image}" alt="${element.Vorspeise}">
             </div>
             <div class="cardRight">
-                <div class="cardTitle">
-                    <h2>${element.Vorspeise}</h2>
-                    <h2>Preis: ${element.Preis.toFixed(2)} €</h2>
-                </div>
                 <div class="cardText">
-                    <p>${element.Beschreibung}</p>
+                    <h2>${element.Vorspeise}</h2>
+                     <p>${element.Beschreibung}</p>
+                </div>
+                <div class="cardPrice">
+                   <h2>Preis: ${element.Preis.toFixed(2)} €</h2>
                 </div>
             </div>
         </div>

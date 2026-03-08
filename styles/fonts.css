@@ -1,7 +1,27 @@
 @font-face {
-    font-family: PalanquinDark;
-    src: url(./assets/fonts/PalanquinDark-Regular.ttf);
-    src: url(./assets/fonts/PalanquinDark-Bold.ttf);
-    src: url(./assets/fonts/PalanquinDark-Medium.ttf);
-    src: url(./assets/fonts/PalanquinDark-SemiBold.ttf);
+    font-family: 'PalanquinDark';
+    src: url('../assets/fonts/PalanquinDark-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PalanquinDark';
+    src: url('../assets/fonts/PalanquinDark-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PalanquinDark';
+    src: url('../assets/fonts/PalanquinDark-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PalanquinDark';
+    src: url('../assets/fonts/PalanquinDark-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
 }
