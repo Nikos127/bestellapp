@@ -107,13 +107,18 @@ let hauptgerichte = [
 ];
 
 function init() {
-    appetizer();
+    card();
 }
 
-function appetizer() {
+function card() {
     for (let i = 0; i < vorspeisen.length; i++) {
         const element = vorspeisen[i];
-        document.getElementById('container').innerHTML += `
+        document.getElementById('container').innerHTML += cardContent(element);
+    }
+}
+
+function cardContent(element) {
+    return `
            <div class="card">
             <div class="cardImage"><img src="${element.image}" alt="${element.Vorspeise}">
             </div>
@@ -127,6 +132,5 @@ function appetizer() {
                 </div>
             </div>
         </div>
-    `;
-    }
+`
 }
