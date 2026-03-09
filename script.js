@@ -106,11 +106,28 @@ let hauptgerichte = [
 
 ];
 
+let header = [
+    {
+        'name': 'Vorspeise',
+        'image': './assets/icons/olive.png'
+    },
+    {
+        'name': 'Salat',
+        'image': './assets/icons/salad.png'
+    },
+    {
+        'name': 'Hauptgericht',
+        'image': './assets/icons/main_course.png'
+    }
+
+]
+
 function init() {
     card();
 }
 
 function card() {
+    document.getElementById('content').innerHTML += headerContent();
     for (let i = 0; i < vorspeisen.length; i++) {
         const element = vorspeisen[i];
         document.getElementById('container').innerHTML += cardContent(element);
