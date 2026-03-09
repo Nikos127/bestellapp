@@ -114,6 +114,9 @@ function card() {
     for (let i = 0; i < vorspeisen.length; i++) {
         const element = vorspeisen[i];
         document.getElementById('container').innerHTML += cardContent(element);
+        document.getElementById('container1').innerHTML += cardContent(element);
+        document.getElementById('container2').innerHTML += cardContent(element);
+        document.getElementById('container3').innerHTML += cardContent(element);
     }
 }
 

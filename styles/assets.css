@@ -4,6 +4,7 @@
     background-color: #E76C1F;
     color: white;
     padding-left: 200px;
+    width: calc(100% + 300px);
 }
 
 .foodGroupImage {
