@@ -10,20 +10,20 @@ function cardContent(element) {
                     </p>
                 </div>
                 <div class="cardPrice">
-                    <h2>${element.Preis.toFixed(2)}€</h2>
+                    <h2>${element.Preis.toFixed(2).replace(".",",")}€</h2>
                 </div>
             </div>
         </div>
     `
 }
 
-function headerContent() {
+function headerContent(headerName,headerImage) {
     return `
     <div class="headerFoodGroups">
-                    Vorspeisen
+                    ${headerName}
                 </div>
                 <div>
-                    <img class="foodGroupImage" src="./assets/icons/olive.png" alt="">
+                    <img class="foodGroupImage" src="${headerImage}" alt="">
                 </div>
                 <div id="container" class="container"></div>
     `

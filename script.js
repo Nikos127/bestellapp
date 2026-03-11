@@ -109,15 +109,18 @@ let hauptgerichte = [
 let header = [
     {
         'name': 'Vorspeise',
-        'image': './assets/icons/olive.png'
+        'image': './assets/icons/olive.png',
+        'object': vorspeisen
     },
     {
         'name': 'Salat',
-        'image': './assets/icons/salad.png'
+        'image': './assets/icons/salad.png',
+        'object': salate
     },
     {
         'name': 'Hauptgericht',
-        'image': './assets/icons/main_course.png'
+        'image': './assets/icons/main_course.png',
+        'object': hauptgerichte
     }
 
 ]
@@ -127,9 +130,20 @@ function init() {
 }
 
 function card() {
-    document.getElementById('content').innerHTML += headerContent();
-    for (let i = 0; i < vorspeisen.length; i++) {
-        const element = vorspeisen[i];
-        document.getElementById('container').innerHTML += cardContent(element);
+    for (let j = 0; j < header.length; j++) {
+        let headerName=header[j].name
+        let headerImage=header[j].image
+         document.getElementById('content').innerHTML += headerContent(headerName,headerImage);
     }
+   
+
+
+
+
+
+
+    // for (let i = 0; i < vorspeisen.length; i++) {
+    //     const element = vorspeisen[i];
+    //     document.getElementById('container').innerHTML += cardContent(element);
+    // }
 }
