@@ -1,10 +1,10 @@
 function cardContent(element) {
     return ` 
     <div class="card">
-            <div class="cardImage"><img src="${element.image}" alt="${element.Vorspeise}"></div>
+            <div class="cardImage"><img src="${element.image}" alt="${element.name}"></div>
             <div class="cardRight">
                 <div class="cardText">
-                    <h2>${element.Vorspeise}
+                    <h2>${element.name}
                     </h2>
                     <p>${element.Beschreibung}
                     </p>
