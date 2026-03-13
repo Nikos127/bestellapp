@@ -143,4 +143,13 @@ function card() {
             document.getElementById('content').innerHTML += cardContent(element);
         }
     }
+    basket();
+}
+
+function basket(){
+    document.getElementById('basket').innerHTML += basketContent();
+}
+
+function addToCart(element){
+    console.log(element);
 }
