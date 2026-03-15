@@ -125,31 +125,69 @@ let header = [
 
 ]
 
+let basketOrder = {
+    'amount': [],
+    'name': [],
+    'preis': []
+}
+
 function init() {
+    getFromLocalStorage();
     card();
 }
 
 function card() {
     for (let j = 0; j < header.length; j++) {
-            let headerName=header[j].name
-            let headerImage=header[j].image
-          let headerObject = header[j].object
-             document.getElementById('content').innerHTML += headerContent(headerName,headerImage);
+        let headerName = header[j].name
+        let headerImage = header[j].image
+        let headerObject = header[j].object
+        document.getElementById('content').innerHTML += headerContent(headerName, headerImage);
 
 
         for (let i = 0; i < headerObject.length; i++) {
-          
+
             const element = headerObject[i];
             document.getElementById('content').innerHTML += cardContent(element);
         }
     }
-    basket();
+    basketContentUpdate();
 }
 
-function basket(){
-    document.getElementById('basket').innerHTML += basketContent();
+function basketContentUpdate() {
+    document.getElementById('basket').innerHTML = basketContent();
+    // document.getElementById('basketContent').innerHTML = '';
+    for (let i = 0; i < basketOrder.name.length; i++) {
+        document.getElementById('basketContent').innerHTML += basketContentRef(i);
+    }
 }
 
-function addToCart(element){
-    console.log(element);
+
+
+function addToCart(elementName, elementPreis, elementAmount) {
+    basketOrder.name.push(elementName);
+    basketOrder.preis.push(elementPreis);
+    basketOrder.amount.push(elementAmount + 1);
+
+    saveToLocalStorage();
+    basketContentUpdate();
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('basketOrder', JSON.stringify(basketOrder.name));
+    localStorage.setItem('basketOrderPreis', JSON.stringify(basketOrder.preis));
+    localStorage.setItem('basketOrderAmount', JSON.stringify(basketOrder.amount));
+}
+
+function getFromLocalStorage() {
+    let arrName = JSON.parse(localStorage.getItem('basketOrder'));
+    let arrPreis = JSON.parse(localStorage.getItem('basketOrderPreis'));
+    let arrAmount = JSON.parse(localStorage.getItem('basketOrderAmount'));
+
+    if (arrName && arrPreis && arrAmount) {
+        basketOrder.name = arrName;
+        basketOrder.preis = arrPreis;
+        basketOrder.amount = arrAmount;
+    }
+
+    basketContentUpdate();
 }

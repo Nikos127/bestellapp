@@ -1,4 +1,6 @@
-function headerContent(headerName,headerImage) {
+let order = []
+
+function headerContent(headerName, headerImage) {
     return `
     <div class="headerFoodGroups">
                     ${headerName}
@@ -22,38 +24,50 @@ function cardContent(element) {
                     </p>
                 </div>
                 <div class="cardPrice">
-                    <h3>${element.Preis.toFixed(2).replace(".",",")}€</h3>
-                    <button class="addToCart" onclick="addToCart(${element})">In den Warenkorb</button>
+                    <h3>${element.Preis.toFixed(2).replace(".", ",")}€</h3>
+                    <button class="addToCart" onclick="addToCart('${element.name}', ${element.Preis}, ${element.amount})">In den Warenkorb</button>
                 </div>
             </div>
         </div>
     `
 }
 
-function basketContent(){
+function basketContent() {
     return `
-                        <h2>Dein Warenkorb</h2>
-                    <div id="basketContent" class="basketContent">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    <h2>Dein Warenkorb</h2>
+                    <div id="basketContent">
                     </div>
                     <table id="basketSum" class="basketSum">
                         <tr>
                             <td>Zwischensumme</td>
-                            <td>15,20€</td>
+                            <td id="subtotal">15,20€</td>
                         </tr>
                         <tr>
                             <td>Lieferkosten</td>
-                            <td>4,99€</td>
+                            <td id="shipping">4,99€</td>
                         </tr>
                         <tr class="line" style="border: 1px solid #FFFFFF">
                         </tr>
                         <tr>
                             <td>Summe</td>
-                            <td>20,19€</td>
+                            <td id="total">100€</td>
                         </tr>
                     </table>
                     <button>
                         <h2>Jetzt kaufen</h2>
                     </button>
                     `
+}
+
+function basketContentRef(i) {
+    return `
+    <div class="basketContent">
+    <table>
+    <tr>
+        <td>${basketOrder.amount[i]} x ${basketOrder.name[i]}</td>
+        <td>${basketOrder.preis[i].toFixed(2).replace(".", ",")}€</td>
+    </tr>
+    </table>
+    </div>
+    `
 }

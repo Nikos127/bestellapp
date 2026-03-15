@@ -143,11 +143,18 @@ h3 {
 
 .basketContent {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin: 16px 0;
     background-color: #FDEADC;
     width: 240px;
     border-radius: 20px;
     padding: 8px;
+}
+
+.basketContent td:nth-child(2) {
+    display: flex;
+    justify-content: end;
 }
 
 .card {
