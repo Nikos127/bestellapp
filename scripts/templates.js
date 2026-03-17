@@ -12,7 +12,7 @@ function headerContent(headerName, headerImage) {
     `
 }
 
-function cardContent(element) {
+function cardContent(element, categoryKey, i) {
     return ` 
     <div class="card">
             <div class="cardImage"><img src="${element.image}" alt="${element.name}"></div>
@@ -25,7 +25,7 @@ function cardContent(element) {
                 </div>
                 <div class="cardPrice">
                     <h3>${element.Preis.toFixed(2).replace(".", ",")}€</h3>
-                    <button id="addToCart" class="addToCart" onclick="addToCart('${element.name}', ${element.Preis}, ${element.amount})">In den Warenkorb</button>
+                    <button id="addToCart" class="addToCart" onclick="addToCart('${categoryKey}', ${i})">In den Warenkorb</button>
                 </div>
             </div>
         </div>
@@ -59,13 +59,13 @@ function basketContent() {
                     `
 }
 
-function basketContentRef(i) {
+function basketContentRef(name, preis, amount) {
     return `
     <div class="basketContent">
     <table>
     <tr>
-        <td>${basketOrder.amount[i]} x ${basketOrder.name[i]}</td>
-        <td>${basketOrder.preis[i].toFixed(2).replace(".", ",")}€</td>
+        <td>${amount} x ${name}</td>
+        <td>${preis.toFixed(2).replace(".", ",")}€</td>
     </tr>
     </table>
     </div>
