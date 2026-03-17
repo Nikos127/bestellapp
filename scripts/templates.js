@@ -25,7 +25,7 @@ function cardContent(element) {
                 </div>
                 <div class="cardPrice">
                     <h3>${element.Preis.toFixed(2).replace(".", ",")}€</h3>
-                    <button class="addToCart" onclick="addToCart('${element.name}', ${element.Preis}, ${element.amount})">In den Warenkorb</button>
+                    <button id="addToCart" class="addToCart" onclick="addToCart('${element.name}', ${element.Preis}, ${element.amount})">In den Warenkorb</button>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ function basketContent() {
                     <table id="basketSum" class="basketSum">
                         <tr>
                             <td>Zwischensumme</td>
-                            <td id="subtotal">15,20€</td>
+                            <td id="subtotal">${basketSum.toFixed(2).replace(".", ",")}€</td>
                         </tr>
                         <tr>
                             <td>Lieferkosten</td>
@@ -50,7 +50,7 @@ function basketContent() {
                         </tr>
                         <tr>
                             <td>Summe</td>
-                            <td id="total">100€</td>
+                            <td id="total">${totalSum.toFixed(2).replace(".", ",")}€</td>
                         </tr>
                     </table>
                     <button>
