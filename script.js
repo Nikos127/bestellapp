@@ -122,20 +122,29 @@ function card() {
         let headerName = category.name;
         let headerImage = category.image;
         let headerObject = category.items;
+        let items = menuItems[categoryKey].items;
 
         document.getElementById('content').innerHTML += headerContent(headerName, headerImage);
 
         for (let i = 0; i < headerObject.length; i++) {
             const element = headerObject[i];
-            document.getElementById('content').innerHTML += cardContent(element, categoryKey, i);
+            let contentRef = document.getElementById('content');
+            contentRef.innerHTML += cardContent(element, categoryKey, i, items);
+            if (items[i].amount > 0) {
+                document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('addToCart');
+            } else {
+                document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('addedToCart');
+            }
+
         }
     }
 
     basketContentUpdate();
 }
 
+
 function basketContentUpdate() {
-    document.getElementById('basket').innerHTML = basketContent();
+
     let basketContentHTML = '';
     let categories = Object.keys(menuItems);
 
@@ -149,6 +158,7 @@ function basketContentUpdate() {
             }
         }
     }
+    document.getElementById('basket').innerHTML = basketContent();
     document.getElementById('basketContent').innerHTML = basketContentHTML;
 }
 
@@ -160,6 +170,7 @@ function addToCart(categoryKey, i) {
     saveToLocalStorage();
     calcBasket();
     basketContentUpdate();
+    card();
 }
 
 function saveToLocalStorage() {

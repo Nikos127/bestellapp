@@ -208,6 +208,11 @@ h3 {
     border-radius: 20px;
 }
 
-.buttonDisable {
+.addToCart {
     display: none;
+}
+
+.addedToCart {
+    display: none;
+    color: #E76C1F;
 }

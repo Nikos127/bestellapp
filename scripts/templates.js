@@ -1,5 +1,3 @@
-let order = []
-
 function headerContent(headerName, headerImage) {
     return `
     <div class="headerFoodGroups">
@@ -12,7 +10,7 @@ function headerContent(headerName, headerImage) {
     `
 }
 
-function cardContent(element, categoryKey, i) {
+function cardContent(element, categoryKey, i, items) {
     return ` 
     <div class="card">
             <div class="cardImage"><img src="${element.image}" alt="${element.name}"></div>
@@ -25,7 +23,8 @@ function cardContent(element, categoryKey, i) {
                 </div>
                 <div class="cardPrice">
                     <h3>${element.Preis.toFixed(2).replace(".", ",")}€</h3>
-                    <button id="addToCart" class="addToCart" onclick="addToCart('${categoryKey}', ${i})">In den Warenkorb</button>
+                    <button id="addToCart-${categoryKey}-${i}"  onclick="addToCart('${categoryKey}', ${i})">In den Warenkorb</button>
+                    <button id="addedToCart-${categoryKey}-${i}" style="color: #E76C1F" disabled>hinzugefügt ${items[i].amount}</button>
                 </div>
             </div>
         </div>
