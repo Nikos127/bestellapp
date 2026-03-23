@@ -131,9 +131,9 @@ function card() {
             let contentRef = document.getElementById('content');
             contentRef.innerHTML += cardContent(element, categoryKey, i, items);
             if (items[i].amount > 0) {
-                document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('addToCart');
-            } else {
-                document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('addedToCart');
+                document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('noButton');
+                document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.remove('noButton');
+                document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
             }
 
         }

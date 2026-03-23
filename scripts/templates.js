@@ -24,7 +24,7 @@ function cardContent(element, categoryKey, i, items) {
                 <div class="cardPrice">
                     <h3>${element.Preis.toFixed(2).replace(".", ",")}€</h3>
                     <button id="addToCart-${categoryKey}-${i}"  onclick="addToCart('${categoryKey}', ${i})">In den Warenkorb</button>
-                    <button id="addedToCart-${categoryKey}-${i}" style="color: #E76C1F" disabled>hinzugefügt ${items[i].amount}</button>
+                    <button id="addedToCart-${categoryKey}-${i}" class="noButton" style="color: #E76C1F" disabled></button>
                 </div>
             </div>
         </div>
