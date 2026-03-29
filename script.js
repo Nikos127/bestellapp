@@ -130,18 +130,22 @@ function card() {
             const element = headerObject[i];
             let contentRef = document.getElementById('content');
             contentRef.innerHTML += cardContent(element, categoryKey, i, items);
+
+            document.getElementById(`addToCart-${categoryKey}-${i}`).classList.remove('noButton');
+            document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('noButton');
+            document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
+
             if (items[i].amount > 0) {
+
                 document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('noButton');
                 document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.remove('noButton');
                 document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
             }
-
         }
     }
 
     basketContentUpdate();
 }
-
 
 function basketContentUpdate() {
 
@@ -154,15 +158,14 @@ function basketContentUpdate() {
 
         for (let i = 0; i < items.length; i++) {
             if (items[i].amount > 0) {
-                basketContentHTML += basketContentRef(items[i].name, items[i].Preis, items[i].amount);
+                basketContentHTML += basketContentRef(items[i].name, items[i].Preis, items[i].amount, categoryKey, i);
             }
+
         }
     }
     document.getElementById('basket').innerHTML = basketContent();
     document.getElementById('basketContent').innerHTML = basketContentHTML;
 }
-
-
 
 function addToCart(categoryKey, i) {
     menuItems[categoryKey].items[i].amount++
@@ -204,3 +207,21 @@ function calcBasket() {
     }
     totalSum = basketSum + 4.99;
 };
+
+function increaseAmount(categoryKey, i) {
+    menuItems[categoryKey].items[i].amount++
+
+    saveToLocalStorage();
+    calcBasket();
+    basketContentUpdate();
+    card();
+}
+
+function decreaseAmount(categoryKey, i) {
+    menuItems[categoryKey].items[i].amount--;
+
+    saveToLocalStorage();
+    calcBasket();
+    basketContentUpdate();
+    card();
+}

@@ -36,7 +36,7 @@ function basketContent() {
                     <h2>Dein Warenkorb</h2>
                     <div id="basketContent">
                     </div>
-                    <table id="basketSum" class="basketSum">
+                    <table id="basketSum" class="basketSum" style="font-size: 20px">
                         <tr>
                             <td>Zwischensumme</td>
                             <td id="subtotal">${basketSum.toFixed(2).replace(".", ",")}€</td>
@@ -58,15 +58,20 @@ function basketContent() {
                     `
 }
 
-function basketContentRef(name, preis, amount) {
+function basketContentRef(name, preis, amount, categoryKey, i) {
     return `
     <div class="basketContent">
-    <table>
-    <tr>
-        <td>${amount} x ${name}</td>
-        <td>${preis.toFixed(2).replace(".", ",")}€</td>
-    </tr>
-    </table>
+            ${amount} x ${name}
+        <div style="font-size:22px" class="basketAmount">
+            <div>
+                ${amount > 1
+            ? `<button class="changeAmount" onclick = "decreaseAmount('${categoryKey}', ${i})" > -</button> `
+            : `<button class="changeAmount" onclick = "decreaseAmount('${categoryKey}', ${i})" > <img src="./assets/icons/trash.png" alt="Remove"></button>`}
+                ${amount}
+                <button class="changeAmount" onclick="increaseAmount('${categoryKey}', ${i})">+</button>
+            </div>
+            ${(preis * amount).toFixed(2).replace(".", ",")}€
+        </div>
     </div>
     `
 }

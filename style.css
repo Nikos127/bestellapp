@@ -150,6 +150,7 @@ h3 {
     width: 240px;
     border-radius: 20px;
     padding: 8px;
+    font-size: 22px;
 }
 
 .basketContent td:nth-child(2) {
@@ -210,4 +211,18 @@ h3 {
 
 .noButton {
     display: none;
+}
+
+.changeAmount {
+    border: none !important;
+    background: none !important;
+    height: 24px !important;
+    width: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.basketAmount {
+    display: flex;
+    justify-content: space-between;
 }
