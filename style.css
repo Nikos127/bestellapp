@@ -226,3 +226,8 @@ h3 {
     display: flex;
     justify-content: space-between;
 }
+
+.form-switch {
+    color: rgb(255, 255, 255);
+    margin-bottom: 8px;
+}

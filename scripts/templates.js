@@ -33,6 +33,10 @@ function cardContent(element, categoryKey, i, items) {
 
 function basketContent() {
     return `
+                    <div class="form-check form-switch">
+                    <input onchange="switchPickUp()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Selbstabholung</label>
+                    </div>
                     <h2>Dein Warenkorb</h2>
                     <div id="basketContent">
                     </div>
@@ -43,7 +47,7 @@ function basketContent() {
                         </tr>
                         <tr>
                             <td>Lieferkosten</td>
-                            <td id="shipping">4,99€</td>
+                            <td id="shipping"></td>
                         </tr>
                         <tr class="line" style="border: 1px solid #FFFFFF">
                         </tr>

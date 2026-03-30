@@ -1,5 +1,6 @@
 let basketSum = 0;
 let totalSum = 0;
+let pickup = false;
 
 let menuItems = {
     vorspeisen: {
@@ -165,6 +166,15 @@ function basketContentUpdate() {
     }
     document.getElementById('basket').innerHTML = basketContent();
     document.getElementById('basketContent').innerHTML = basketContentHTML;
+    let checkbox = document.getElementById('flexSwitchCheckDefault');
+    if (checkbox) {
+        checkbox.checked = pickup;
+    }
+    if (pickup) {
+        document.getElementById('shipping').innerHTML = `0,00€`
+    } else {
+        document.getElementById('shipping').innerHTML = `4,99€`
+    }
 }
 
 function addToCart(categoryKey, i) {
@@ -205,8 +215,14 @@ function calcBasket() {
             }
         }
     }
-    totalSum = basketSum + 4.99;
-};
+    if (pickup) {
+        totalSum = basketSum
+    } else {
+        totalSum = basketSum + 4.99
+    }
+
+
+}
 
 function increaseAmount(categoryKey, i) {
     menuItems[categoryKey].items[i].amount++
@@ -224,4 +240,14 @@ function decreaseAmount(categoryKey, i) {
     calcBasket();
     basketContentUpdate();
     card();
+}
+
+function switchPickUp() {
+    pickup = !pickup;
+    calcBasket();
+    basketContentUpdate();
+    let checkbox = document.getElementById('flexSwitchCheckDefault');
+    if (checkbox) {
+        checkbox.checked = pickup;
+    }
 }
