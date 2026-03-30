@@ -1,6 +1,9 @@
 let basketSum = 0;
 let totalSum = 0;
-let pickup = false;
+
+let appSettings = {
+    pickup: false
+};
 
 let menuItems = {
     vorspeisen: {
@@ -109,6 +112,8 @@ let menuItems = {
     }
 };
 
+
+
 function init() {
     getFromLocalStorage();
     card();
@@ -168,9 +173,9 @@ function basketContentUpdate() {
     document.getElementById('basketContent').innerHTML = basketContentHTML;
     let checkbox = document.getElementById('flexSwitchCheckDefault');
     if (checkbox) {
-        checkbox.checked = pickup;
+        checkbox.checked = appSettings.pickup;
     }
-    if (pickup) {
+    if (appSettings.pickup) {
         document.getElementById('shipping').innerHTML = `0,00€`
     } else {
         document.getElementById('shipping').innerHTML = `4,99€`
@@ -187,14 +192,19 @@ function addToCart(categoryKey, i) {
 }
 
 function saveToLocalStorage() {
+    localStorage.setItem('appSettings', JSON.stringify(appSettings));
     localStorage.setItem('menuItems', JSON.stringify(menuItems));
 }
 
 function getFromLocalStorage() {
+    let arrSettings = JSON.parse(localStorage.getItem('appSettings'));
     let arrName = JSON.parse(localStorage.getItem('menuItems'));
 
     if (arrName) {
         menuItems = arrName;
+    }
+    if (arrSettings) {
+        appSettings = arrSettings;
     }
 
     calcBasket();
@@ -215,7 +225,7 @@ function calcBasket() {
             }
         }
     }
-    if (pickup) {
+    if (appSettings.pickup) {
         totalSum = basketSum
     } else {
         totalSum = basketSum + 4.99
@@ -243,11 +253,13 @@ function decreaseAmount(categoryKey, i) {
 }
 
 function switchPickUp() {
-    pickup = !pickup;
+    appSettings.pickup = !appSettings.pickup;
     calcBasket();
     basketContentUpdate();
     let checkbox = document.getElementById('flexSwitchCheckDefault');
     if (checkbox) {
-        checkbox.checked = pickup;
+        checkbox.checked = appSettings.pickup;
     }
+
+    saveToLocalStorage();
 }
