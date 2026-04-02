@@ -1,0 +1,171 @@
+@media(max-width:1200px){
+    h3{
+        font-size: 20px;
+    }
+
+    .basket h2{
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    .menuButton{
+        font-size: 12px;
+    }
+
+    .cardPrice{
+        min-width: 150px;
+    }
+
+    .cardImage img{
+        width: 140px;
+        height: 84px;
+    }
+
+    .card{
+        margin: 16px 60px;
+    }
+
+    .basketContent{
+        font-size: 16px;
+    }
+
+    .basketAmount{
+        font-size: 16px !important;
+    }
+
+    .changeAmount{
+        height: 6px !important;
+    }
+}
+
+@media(max-width:950px){
+    h3{
+        font-size: 18px;
+    }
+
+    .basket h2{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    .menuButton{
+        font-size: 12px;
+    }
+
+    .cardPrice{
+        min-width: 130px;
+    }
+
+    .cardImage img{
+        width: 112px;
+        height: 67px;
+    }
+
+    .card{
+        margin: 8px 30px;
+    }
+
+    .cardPrice{
+        padding-left: 8px;
+    }
+
+    .basketContent{
+        font-size: 14px;
+    }
+
+    .basketAmount{
+        font-size: 14px !important;
+    }
+
+    .changeAmount{
+        height: 5px !important;
+    }
+
+    .cardRight{
+        margin: 8px;
+    }
+}
+
+@media(max-width:775px){
+    h3{
+        font-size: 18px;
+    }
+
+    .basket h2{
+        font-size: 18px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    .menuButton{
+        font-size: 12px;
+    }
+
+    .cardPrice{
+        min-width: 130px;
+    }
+
+    .cardImage img{
+        width: 112px;
+        height: 67px;
+    }
+
+    .card{
+        margin: 8px 30px;
+    }
+
+    .cardPrice{
+        padding-left: 8px;
+    }
+
+    .basketContent{
+        font-size: 14px;
+    }
+
+    .basketAmount{
+        font-size: 14px !important;
+    }
+
+    .changeAmount{
+        height: 5px !important;
+    }
+
+    .cardRight{
+        margin: 8px;
+    }
+
+    footer{
+        display: flex;
+    }
+
+    .basketWrapper{
+        width: 100vb;
+    }
+
+    .foodGroupImage{
+        height: 80px;
+        width: 80px;
+        margin-top: -70px;
+    }
+
+    .headerFoodGroups{
+        padding-left: 150px;
+    }
+
+    .headerFoodGroups img{
+        margin-left: 50px;
+    }
+}
+

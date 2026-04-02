@@ -96,7 +96,7 @@ h3 {
 
 .content {
     width: calc(100% - 300px);
-    max-width: 1920px;
+    max-width: 1620px;
 }
 
 .basketWrapper {
@@ -195,7 +195,7 @@ h3 {
     flex-direction: column;
     justify-content: space-around;
     justify-items: end;
-    min-width: 200px;
+    min-width: 180px;
     padding-left: 24px;
     align-items: end;
 }
@@ -230,4 +230,22 @@ h3 {
 .form-switch {
     color: rgb(255, 255, 255);
     margin-bottom: 8px;
+}
+
+.menuButton {
+    max-height: 30px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #363534;
+    padding: 48px;
+}
+
+footer button {
+    background-color: #363534;
+    height: 30px;
+    width: 30px;
+    border: none;
 }
