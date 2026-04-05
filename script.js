@@ -121,6 +121,7 @@ function init() {
 
 function card() {
     let categories = Object.keys(menuItems);
+    document.getElementById('content').innerHTML = "";
 
     for (let j = 0; j < categories.length; j++) {
         let categoryKey = categories[j];

@@ -207,6 +207,7 @@ h3 {
 .card button {
     background-color: #FFFFFF;
     border-radius: 20px;
+    max-height: 30px;
 }
 
 .noButton {
