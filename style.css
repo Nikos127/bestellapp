@@ -237,11 +237,21 @@ h3 {
     max-height: 30px;
 }
 
-footer {
+.impressum {
+    background-color: #E76C1F;
+    height: 128px;
     display: flex;
-    justify-content: space-between;
-    background-color: #363534;
-    padding: 48px;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+    padding-top: 72px;
+}
+
+.impressum p {
+    margin: 0;
+}
+
+footer nav {
+    display: none;
 }
 
 footer button {

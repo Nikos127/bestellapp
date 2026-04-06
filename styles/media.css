@@ -16,7 +16,7 @@
     }
 
     .cardPrice {
-        min-width: 150px;
+        min-width: 160px;
     }
 
     .cardImage img {
@@ -25,7 +25,11 @@
     }
 
     .card {
-        margin: 16px 60px;
+        margin: 16px 48px;
+    }
+
+    .card button {
+        font-size: 14px;
     }
 
     .basketContent {
@@ -178,21 +182,25 @@
     }
 
     .basketWrapper {
-        width: 100vb;
+        width: 0;
     }
 
     .foodGroupImage {
         height: 80px;
         width: 80px;
-        margin-top: -70px;
+        margin-top: -60px;
     }
 
     .headerFoodGroups {
-        padding-left: 150px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 28px;
+        padding-left: 80px;
     }
 
-    .headerFoodGroups img {
-        margin-left: 50px;
+    .foodGroupImage {
+        margin-left: 16px;
     }
 
     .cardImage img {
@@ -204,5 +212,38 @@
         flex-direction: row;
         justify-content: space-between;
         padding-left: 0;
+    }
+
+    .basket {
+        display: none;
+    }
+
+    .content {
+        width: 100vb;
+    }
+
+    .moto {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .impressum p:first-child {
+        order: 3;
+    }
+
+    .impressum {
+        flex-direction: column;
+        align-items: center;
+        padding: 32px;
+    }
+
+    footer nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #363534;
+        padding: 48px;
     }
 }
