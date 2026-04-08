@@ -23,7 +23,7 @@
 </head>
 
 <body onload="init()">
-    <header>
+    <header id="header">
         <nav class="navbar">
             <img src="./assets/icons/logo2.png" alt="">
             <button class="navbar-toggler" type="button">
@@ -49,13 +49,13 @@
             <div id="content" class="content">
             </div>
             <div class="basketWrapper">
-                <div id="basket" class="basket">
-
+                <div id="basket" class="basket showBasket">
+                    <button style="color: #E76C1F;"><img src="./assets/icons/close.png" alt=""></button>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
+    <footer id="footer">
         <div class="impressum">
             <p>&copy; 2026 RestaurantSamos</p>
             <p>Imprint</p>
@@ -65,7 +65,11 @@
             <button><img src="./assets/icons/home.png" alt=""></button>
             <button><img src="./assets/icons/profile.png" alt=""></button>
             <button><img src="./assets/icons/orders.png" alt=""></button>
-            <button><img src="./assets/icons/basket.png" alt=""></button>
+            <div>
+                <button onclick="showBasket()"><img src="./assets/icons/basket.png" alt=""></button>
+                <img id="basketBadgeToggle" src="./assets/icons/badge.png" alt="">
+                <span class="badgeAmount" id="basketBadge"></span>
+            </div>
         </nav>
     </footer>
 </body>

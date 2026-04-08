@@ -150,8 +150,34 @@ function card() {
             }
         }
     }
-
     basketContentUpdate();
+    basketBadge();
+}
+
+function basketBadge() {
+    let sumItems = 0;
+    let categories = Object.keys(menuItems);
+
+    for (let j = 0; j < categories.length; j++) {
+        let categoryKey = categories[j];
+        let items = menuItems[categoryKey].items;
+
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].amount > 0) {
+                sumItems++
+            };
+        }
+    }
+    if (sumItems > 0) {
+        document.getElementById('basketBadge').innerHTML = `${sumItems}`;
+        document.getElementById('basketBadgeToggle').classList.add('basketBadgeFull');
+        document.getElementById('basketBadgeToggle').classList.remove('basketBadgeEmpty');
+    } else {
+        document.getElementById('basketBadge').innerHTML = "";
+        document.getElementById('basketBadgeToggle').classList.remove('basketBadgeFull');
+        document.getElementById('basketBadgeToggle').classList.add('basketBadgeEmpty')
+    }
+
 }
 
 function basketContentUpdate() {
@@ -167,7 +193,6 @@ function basketContentUpdate() {
             if (items[i].amount > 0) {
                 basketContentHTML += basketContentRef(items[i].name, items[i].Preis, items[i].amount, categoryKey, i);
             }
-
         }
     }
     document.getElementById('basket').innerHTML = basketContent();
@@ -231,8 +256,6 @@ function calcBasket() {
     } else {
         totalSum = basketSum + 4.99
     }
-
-
 }
 
 function increaseAmount(categoryKey, i) {
@@ -250,6 +273,7 @@ function decreaseAmount(categoryKey, i) {
     saveToLocalStorage();
     calcBasket();
     basketContentUpdate();
+    basketBadge();
     card();
 }
 
@@ -263,4 +287,32 @@ function switchPickUp() {
     }
 
     saveToLocalStorage();
+}
+
+function showBasket() {
+    document.getElementById('header').classList.add('headerMobile')
+    document.getElementById('content').classList.add('contentMobile')
+    document.getElementById('footer').classList.add('footerMobile')
+    document.getElementById('basket').classList.add('basketMobile')
+
+    var x = document.getElementById('basket');
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "flex";
+    }
+}
+
+function closeBasket() {
+    document.getElementById('header').classList.remove('headerMobile')
+    document.getElementById('content').classList.remove('contentMobile')
+    document.getElementById('footer').classList.remove('footerMobile')
+    document.getElementById('basket').classList.remove('basketMobile')
+
+    var x = document.getElementById('basket');
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "none";
+    }
 }
