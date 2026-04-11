@@ -33,7 +33,7 @@ function cardContent(element, categoryKey, i, items) {
 
 function basketContent() {
     return `
-                    <button><img src="./assets/icons/close.png" alt=""></button>
+                    <button id="closeBasket" class="closeBasket" onclick="closeBasket()"><img src="./assets/icons/close.png" alt=""></button>
                     <div class="form-check form-switch">
                     <input onchange="switchPickUp()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Selbstabholung</label>

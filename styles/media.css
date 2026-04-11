@@ -160,6 +160,10 @@
         padding-left: 8px;
     }
 
+    .basket {
+        display: none;
+    }
+
     .basketContent {
         font-size: 14px;
         width: 90vw;
@@ -273,7 +277,7 @@
         margin-top: -24px;
     }
 
-    .basketBadgeEmpty{
+    .basketBadgeEmpty {
         display: none;
     }
 
@@ -284,7 +288,12 @@
         font-size: 14px;
     }
 
-    .basket{
-        display: none;
+    .closeBasket {
+        visibility: visible;
+        background: none !important;
+        border: none;
+        margin: 0 0 0 90vw;
+        width: 16px !important;
+        height: 16px !important;
     }
 }

@@ -307,12 +307,4 @@ function closeBasket() {
     document.getElementById('header').classList.remove('headerMobile')
     document.getElementById('content').classList.remove('contentMobile')
     document.getElementById('footer').classList.remove('footerMobile')
-    document.getElementById('basket').classList.remove('basketMobile')
-
-    var x = document.getElementById('basket');
-    if (x.style.display === "flex") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "none";
-    }
 }

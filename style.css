@@ -215,6 +215,10 @@ h3 {
     display: none;
 }
 
+.closeBasket {
+    visibility: hidden;
+}
+
 .changeAmount {
     border: none !important;
     background: none !important;
