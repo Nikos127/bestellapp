@@ -289,29 +289,41 @@ function switchPickUp() {
     saveToLocalStorage();
 }
 
-function showBasket() {
+function showBasketMobile() {
     document.getElementById('header').classList.add('headerMobile')
     document.getElementById('content').classList.add('contentMobile')
     document.getElementById('footer').classList.add('footerMobile')
     document.getElementById('basket').classList.add('basketMobile')
-
-    var x = document.getElementById('basket');
-    if (x.style.display === "none") {
-        x.style.display = "flex";
-    } else {
-        x.style.display = "flex";
-    }
 }
 
 function closeBasket() {
     document.getElementById('header').classList.remove('headerMobile')
     document.getElementById('content').classList.remove('contentMobile')
     document.getElementById('footer').classList.remove('footerMobile')
+    document.getElementById('basket').classList.remove('basketMobile')
+}
 
-    var x = document.getElementById('basket');
-    if (x.style.display === "flex") {
-        x.style.display = "none";
+function buyNow() {
+    if (window.innerWidth > 775) {
+        document.getElementById('buyNow').style.display = "flex";
+        document.getElementById('basket').style.display = "none";
+
+        setTimeout(() => {
+            document.getElementById('basket').style.display = "";
+            closeOrderConfimation();
+        }, 1000);
     } else {
-        x.style.display = "none";
+        document.getElementById('buyNow').style.display = "flex";
+        document.getElementById('basket').style.display = "none";
+        closeBasket();
+
+        setTimeout(() => {
+            document.getElementById('basket').style.display = "";
+            closeOrderConfimation();
+        }, 1000);
     }
+}
+
+function closeOrderConfimation() {
+    document.getElementById('buyNow').style.display = "none";
 }

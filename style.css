@@ -266,3 +266,27 @@ footer button {
     width: 30px;
     border: none;
 }
+
+.buyNow {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #363534;
+    width: 340px;
+    height: 255px;
+    border-radius: 30px;
+}
+
+.buyNow button {
+    background: none;
+    border: none;
+    color: #FDEADC;
+    position: relative;
+    top: -56px;
+    left: 136px;
+}
