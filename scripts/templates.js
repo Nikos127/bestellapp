@@ -57,7 +57,7 @@ function basketContent() {
                             <td id="total">${totalSum.toFixed(2).replace(".", ",")}€</td>
                         </tr>
                     </table>
-                    <button onclick="buyNow()">
+                    <button ${basketSum === 0 ? `disabled` : `onclick="buyNow()"`}>
                         <h2>Jetzt kaufen</h2>
                     </button>
                     `

@@ -307,21 +307,16 @@ function buyNow() {
     if (window.innerWidth > 775) {
         document.getElementById('buyNow').style.display = "flex";
         document.getElementById('basket').style.display = "none";
-
-        setTimeout(() => {
-            document.getElementById('basket').style.display = "";
-            closeOrderConfimation();
-        }, 1000);
     } else {
         document.getElementById('buyNow').style.display = "flex";
         document.getElementById('basket').style.display = "none";
         closeBasket();
-
-        setTimeout(() => {
-            document.getElementById('basket').style.display = "";
-            closeOrderConfimation();
-        }, 1000);
     }
+
+    setTimeout(() => {
+        document.getElementById('basket').style.display = "";
+        closeOrderConfimation();
+    }, 5000);
 }
 
 function closeOrderConfimation() {
