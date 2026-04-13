@@ -150,6 +150,7 @@ function card() {
             }
         }
     }
+
     basketContentUpdate();
     basketBadge();
 }
@@ -244,7 +245,6 @@ function calcBasket() {
     for (let j = 0; j < categories.length; j++) {
         let categoryKey = categories[j];
         let items = menuItems[categoryKey].items;
-
         for (let i = 0; i < items.length; i++) {
             if (items[i].amount > 0) {
                 basketSum += items[i].Preis * items[i].amount;
@@ -320,5 +320,28 @@ function buyNow() {
 }
 
 function closeOrderConfimation() {
+    emptyBasket();
+    saveToLocalStorage();
+    calcBasket();
+    basketContentUpdate();
+    basketBadge();
+    card();
+    document.getElementById('basket').style.display = "";
     document.getElementById('buyNow').style.display = "none";
+}
+
+function emptyBasket() {
+    let categories = Object.keys(menuItems);
+
+    for (let j = 0; j < categories.length; j++) {
+        let categoryKey = categories[j];
+        let items = menuItems[categoryKey].items;
+
+        for (let i = 0; i < items.length; i++) {
+            items[i].amount = 0
+
+        }
+    }
+
+    saveToLocalStorage();
 }
