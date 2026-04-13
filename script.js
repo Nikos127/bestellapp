@@ -116,10 +116,10 @@ let menuItems = {
 
 function init() {
     getFromLocalStorage();
-    card();
+    cardHeader();
 }
 
-function card() {
+function cardHeader() {
     let categories = Object.keys(menuItems);
     document.getElementById('content').innerHTML = "";
 
@@ -132,27 +132,30 @@ function card() {
         let items = menuItems[categoryKey].items;
 
         document.getElementById('content').innerHTML += headerContent(headerName, headerImage);
-
-        for (let i = 0; i < headerObject.length; i++) {
-            const element = headerObject[i];
-            let contentRef = document.getElementById('content');
-            contentRef.innerHTML += cardContent(element, categoryKey, i, items);
-
-            document.getElementById(`addToCart-${categoryKey}-${i}`).classList.remove('noButton');
-            document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('noButton');
-            document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
-
-            if (items[i].amount > 0) {
-
-                document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('noButton');
-                document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.remove('noButton');
-                document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
-            }
-        }
+        cardMainMenu(headerObject, categoryKey, items);
     }
 
     basketContentUpdate();
     basketBadge();
+}
+
+function cardMainMenu(headerObject, categoryKey, items) {
+    for (let i = 0; i < headerObject.length; i++) {
+        const element = headerObject[i];
+        let contentRef = document.getElementById('content');
+        contentRef.innerHTML += cardContent(element, categoryKey, i, items);
+
+        document.getElementById(`addToCart-${categoryKey}-${i}`).classList.remove('noButton');
+        document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('noButton');
+        document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
+
+        if (items[i].amount > 0) {
+
+            document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('noButton');
+            document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.remove('noButton');
+            document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
+        }
+    }
 }
 
 function basketBadge() {
@@ -215,7 +218,7 @@ function addToCart(categoryKey, i) {
     saveToLocalStorage();
     calcBasket();
     basketContentUpdate();
-    card();
+    cardHeader();
 }
 
 function saveToLocalStorage() {
@@ -264,7 +267,7 @@ function increaseAmount(categoryKey, i) {
     saveToLocalStorage();
     calcBasket();
     basketContentUpdate();
-    card();
+    cardHeader();
 }
 
 function decreaseAmount(categoryKey, i) {
@@ -274,7 +277,7 @@ function decreaseAmount(categoryKey, i) {
     calcBasket();
     basketContentUpdate();
     basketBadge();
-    card();
+    cardHeader();
 }
 
 function switchPickUp() {
@@ -325,7 +328,7 @@ function closeOrderConfimation() {
     calcBasket();
     basketContentUpdate();
     basketBadge();
-    card();
+    cardHeader();
     document.getElementById('basket').style.display = "";
     document.getElementById('buyNow').style.display = "none";
 }
