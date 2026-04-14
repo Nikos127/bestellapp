@@ -139,6 +139,11 @@
         font-size: 14px;
     }
 
+    .navbar-toggler:hover {
+       cursor: default;
+       filter: invert();
+    }
+
     .menuButton {
         font-size: 12px;
     }

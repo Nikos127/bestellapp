@@ -1,13 +1,17 @@
 header {
+    width: 100%;
+}
+
+header > :not(.navbar) {
     max-width: 1920px;
+    margin: 0 auto;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     background-color: #E76C1F;
-    padding: 48px 120px 24px;
-
+    padding: 48px max(16px, calc((100vw - 1920px) / 2 + 16px)) 24px;
 }
 
 .navbar button {
