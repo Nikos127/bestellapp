@@ -1,12 +1,10 @@
 function headerContent(headerName, headerImage) {
     return `
     <div class="headerFoodGroups">
-                    ${headerName}
-                </div>
-                <div>
-                    <img class="foodGroupImage" src="${headerImage}" alt="">
-                </div>
-                <div id="container" class="container"></div>
+        <img class="foodGroupImage" src="${headerImage}" alt="">
+            ${headerName}
+        </div>
+    <div id="container" class="container"></div>
     `
 }
 

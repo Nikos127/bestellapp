@@ -1,15 +1,16 @@
 .headerFoodGroups {
+    display: flex;
+    align-items: center;
+    gap: 24px;
     font-size: 40px;
     font-weight: bold;
     background-color: #E76C1F;
     color: white;
-    padding-left: 200px;
-    width: calc(100% + 300px);
+    padding-left: calc((100vw - min(100vw, 1920px)) / 2 + 120px);
+    width: 100vw;
+    margin-left: calc((min(100vw, 1920px) - 100vw) / 2);
 }
 
 .foodGroupImage {
     width: 120px;
-    position: absolute;
-    margin-left: 48px;
-    margin-top: -90px;
 }

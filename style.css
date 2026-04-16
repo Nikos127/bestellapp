@@ -90,6 +90,8 @@ h3 {
 .menuWrapper {
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
+    max-width: 1920px;
 }
 
 .content {
@@ -127,10 +129,9 @@ h3 {
     background-color: #E76C1F;
     height: 128px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color: rgb(255, 255, 255);
-    padding-top: 72px;
-    max-width: 1920px;
+    padding: 72px max(120px, calc((100vw - 1920px) / 2 + 120px));
 }
 
 .impressum p {
