@@ -45,12 +45,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 16px 0;
+    margin: 16px 8px;
     background-color: #FDEADC;
     width: 240px;
     border-radius: 20px;
     padding: 8px;
     font-size: 22px;
+}
+
+#basketContent{
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 .basketContent td:nth-child(2) {
