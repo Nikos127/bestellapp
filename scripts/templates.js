@@ -71,7 +71,7 @@ function basketContentRef(name, price, amount, categoryKey, i) {
                 ${amount}
                 <button class="changeAmount" onclick="increaseAmount('${categoryKey}', ${i})">+</button>
             </div>
-            ${(price * amount).toFixed(2).replace(".", ",")}€
+            <span class="itemPrice"> ${(price * amount).toFixed(2).replace(".", ",")}€</span>
             <button class="changeAmount" onclick = "eraseAmount('${categoryKey}', ${i})" > <img src="./assets/icons/trash.png" alt="Remove"></button>
         </div>
     </div>

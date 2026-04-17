@@ -75,3 +75,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.itemPrice{
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 8px;
+}
