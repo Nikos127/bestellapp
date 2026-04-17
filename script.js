@@ -189,18 +189,11 @@ function switchPickUp() {
     saveToLocalStorage();
 }
 
-function showBasketMobile() {
-    document.getElementById('header').classList.add('headerMobile')
-    document.getElementById('content').classList.add('contentMobile')
-    document.getElementById('footer').classList.add('footerMobile')
-    document.getElementById('basket').classList.add('basketMobile')
-}
-
-function closeBasket() {
-    document.getElementById('header').classList.remove('headerMobile')
-    document.getElementById('content').classList.remove('contentMobile')
-    document.getElementById('footer').classList.remove('footerMobile')
-    document.getElementById('basket').classList.remove('basketMobile')
+function toggleBasket() {
+    document.getElementById('header').classList.toggle('headerMobile')
+    document.getElementById('content').classList.toggle('contentMobile')
+    document.getElementById('footer').classList.toggle('footerMobile')
+    document.getElementById('basket').classList.toggle('basketMobile')
 }
 
 function buyNow() {
