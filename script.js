@@ -203,7 +203,7 @@ function buyNow() {
     } else {
         document.getElementById('buyNow').style.display = "flex";
         document.getElementById('basket').style.display = "none";
-        closeBasket();
+        toggleBasket();
     }
 
     setTimeout(() => {
