@@ -22,7 +22,7 @@ function cardContent(element, categoryKey, i, items) {
                 <div class="cardPrice">
                     <h3>${(element.price).toFixed(2).replace(".", ",")}€</h3>
                     <button id="addToCart-${categoryKey}-${i}"  onclick="addToCart('${categoryKey}', ${i})">In den Warenkorb</button>
-                    <button id="addedToCart-${categoryKey}-${i}" class="noButton" style="color: #E76C1F" disabled></button>
+                    <button id="addedToCart-${categoryKey}-${i}" onclick="increaseAmount('${categoryKey}', ${i})" class="noButton" style="color: #E76C1F"></button>
                 </div>
             </div>
         </div>
@@ -67,13 +67,12 @@ function basketContentRef(name, price, amount, categoryKey, i) {
             ${amount} x ${name}
         <div style="font-size:22px" class="basketAmount">
             <div>
-                ${amount > 1
-            ? `<button class="changeAmount" onclick = "decreaseAmount('${categoryKey}', ${i})" > -</button> `
-            : `<button class="changeAmount" onclick = "decreaseAmount('${categoryKey}', ${i})" > <img src="./assets/icons/trash.png" alt="Remove"></button>`}
+             <button class="changeAmount" onclick = "decreaseAmount('${categoryKey}', ${i})" > -</button>
                 ${amount}
                 <button class="changeAmount" onclick="increaseAmount('${categoryKey}', ${i})">+</button>
             </div>
             ${(price * amount).toFixed(2).replace(".", ",")}€
+            <button class="changeAmount" onclick = "eraseAmount('${categoryKey}', ${i})" > <img src="./assets/icons/trash.png" alt="Remove"></button>
         </div>
     </div>
     `

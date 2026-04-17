@@ -167,6 +167,16 @@ function decreaseAmount(categoryKey, i) {
     cardHeader();
 }
 
+function eraseAmount(categoryKey, i) {
+    menuItems[categoryKey].items[i].amount = 0;
+
+    saveToLocalStorage();
+    calcBasket();
+    basketContentUpdate();
+    basketBadge();
+    cardHeader();
+}
+
 function switchPickUp() {
     appSettings.pickup = !appSettings.pickup;
     calcBasket();
