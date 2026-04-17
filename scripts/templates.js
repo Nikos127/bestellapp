@@ -16,11 +16,11 @@ function cardContent(element, categoryKey, i, items) {
                 <div class="cardText">
                     <h3>${element.name}
                     </h3>
-                    <p>${element.Beschreibung}
+                    <p>${element.description}
                     </p>
                 </div>
                 <div class="cardPrice">
-                    <h3>${element.Preis.toFixed(2).replace(".", ",")}€</h3>
+                    <h3>${(element.price).toFixed(2).replace(".", ",")}€</h3>
                     <button id="addToCart-${categoryKey}-${i}"  onclick="addToCart('${categoryKey}', ${i})">In den Warenkorb</button>
                     <button id="addedToCart-${categoryKey}-${i}" class="noButton" style="color: #E76C1F" disabled></button>
                 </div>
@@ -61,7 +61,7 @@ function basketContent() {
                     `
 }
 
-function basketContentRef(name, preis, amount, categoryKey, i) {
+function basketContentRef(name, price, amount, categoryKey, i) {
     return `
     <div id="basketContent" class="basketContent">
             ${amount} x ${name}
@@ -73,7 +73,7 @@ function basketContentRef(name, preis, amount, categoryKey, i) {
                 ${amount}
                 <button class="changeAmount" onclick="increaseAmount('${categoryKey}', ${i})">+</button>
             </div>
-            ${(preis * amount).toFixed(2).replace(".", ",")}€
+            ${(price * amount).toFixed(2).replace(".", ",")}€
         </div>
     </div>
     `

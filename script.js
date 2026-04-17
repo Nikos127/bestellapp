@@ -82,7 +82,7 @@ function basketContentUpdate() {
 
         for (let i = 0; i < items.length; i++) {
             if (items[i].amount > 0) {
-                basketContentHTML += basketContentRef(items[i].name, items[i].Preis, items[i].amount, categoryKey, i);
+                basketContentHTML += basketContentRef(items[i].name, items[i].price, items[i].amount, categoryKey, i);
             }
         }
     }
@@ -137,7 +137,7 @@ function calcBasket() {
         let items = menuItems[categoryKey].items;
         for (let i = 0; i < items.length; i++) {
             if (items[i].amount > 0) {
-                basketSum += items[i].Preis * items[i].amount;
+                basketSum += items[i].price * items[i].amount;
             }
         }
     }
