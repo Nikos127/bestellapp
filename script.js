@@ -196,7 +196,43 @@ function toggleBasket() {
     document.getElementById('basket').classList.toggle('basketMobile')
 }
 
+function disableButtons() {
+    let categories = Object.keys(menuItems);
+
+    for (let j = 0; j < categories.length; j++) {
+        let categoryKey = categories[j];
+        let items = menuItems[categoryKey].items;
+
+        for (let i = 0; i < items.length; i++) {
+            let addButton = document.getElementById(`addToCart-${categoryKey}-${i}`);
+            let addedButton = document.getElementById(`addedToCart-${categoryKey}-${i}`);
+
+            if (addButton) addButton.disabled = true;
+            if (addedButton) addedButton.disabled = true;
+        }
+    }
+}
+
+function enableButtons() {
+    let categories = Object.keys(menuItems);
+
+    for (let j = 0; j < categories.length; j++) {
+        let categoryKey = categories[j];
+        let items = menuItems[categoryKey].items;
+
+        for (let i = 0; i < items.length; i++) {
+            let addButton = document.getElementById(`addToCart-${categoryKey}-${i}`);
+            let addedButton = document.getElementById(`addedToCart-${categoryKey}-${i}`);
+
+            if (addButton) addButton.disabled = false;
+            if (addedButton) addedButton.disabled = false;
+        }
+    }
+}
+
 function buyNow() {
+    disableButtons();
+
     if (window.innerWidth > 775) {
         document.getElementById('buyNow').style.display = "flex";
         document.getElementById('basket').style.display = "none";
@@ -208,8 +244,9 @@ function buyNow() {
 
     setTimeout(() => {
         document.getElementById('basket').style.display = "";
+        enableButtons();
         closeOrderConfimation();
-    }, 5000);
+    }, 3000);
 }
 
 function closeOrderConfimation() {
