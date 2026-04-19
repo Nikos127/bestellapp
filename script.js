@@ -31,21 +31,40 @@ function cardMainMenu(headerObject, categoryKey, items) {
         const element = headerObject[i];
         let contentRef = document.getElementById('content');
         contentRef.innerHTML += cardContent(element, categoryKey, i, items);
-
-        document.getElementById(`addToCart-${categoryKey}-${i}`).classList.remove('noButton');
-        document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('noButton');
-        document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
-
+        buttonNoAdd(categoryKey, i, items);
         if (items[i].amount > 0) {
-
-            document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('noButton');
-            document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.remove('noButton');
-            document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
+            buttonAdded(categoryKey, i, items);
         }
     }
 }
 
+function buttonNoAdd(categoryKey, i, items) {
+    document.getElementById(`addToCart-${categoryKey}-${i}`).classList.remove('noButton');
+    document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.add('noButton');
+    document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
+}
+
+function buttonAdded(categoryKey, i, items) {
+    document.getElementById(`addToCart-${categoryKey}-${i}`).classList.add('noButton');
+    document.getElementById(`addedToCart-${categoryKey}-${i}`).classList.remove('noButton');
+    document.getElementById(`addedToCart-${categoryKey}-${i}`).innerHTML = `hinzugefügt ${items[i].amount}`;
+}
+
 function basketBadge() {
+    let sumItems = countItems();
+
+    if (sumItems > 0) {
+        document.getElementById('basketBadge').innerHTML = `${sumItems}`;
+        document.getElementById('basketBadgeToggle').classList.add('basketBadgeFull');
+        document.getElementById('basketBadgeToggle').classList.remove('basketBadgeEmpty');
+    } else {
+        document.getElementById('basketBadge').innerHTML = "";
+        document.getElementById('basketBadgeToggle').classList.remove('basketBadgeFull');
+        document.getElementById('basketBadgeToggle').classList.add('basketBadgeEmpty')
+    }
+}
+
+function countItems() {
     let sumItems = 0;
     let categories = Object.keys(menuItems);
 
@@ -59,16 +78,8 @@ function basketBadge() {
             };
         }
     }
-    if (sumItems > 0) {
-        document.getElementById('basketBadge').innerHTML = `${sumItems}`;
-        document.getElementById('basketBadgeToggle').classList.add('basketBadgeFull');
-        document.getElementById('basketBadgeToggle').classList.remove('basketBadgeEmpty');
-    } else {
-        document.getElementById('basketBadge').innerHTML = "";
-        document.getElementById('basketBadgeToggle').classList.remove('basketBadgeFull');
-        document.getElementById('basketBadgeToggle').classList.add('basketBadgeEmpty')
-    }
 
+    return sumItems;
 }
 
 function basketContentUpdate() {
