@@ -3,6 +3,16 @@
     font-family: PalanquinDark;
 }
 
+/* Fundamentale Overflow-Lösung für Gerätesimulation */
+html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative;
 }
