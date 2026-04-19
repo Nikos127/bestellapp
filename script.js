@@ -83,7 +83,6 @@ function countItems() {
 }
 
 function basketContentUpdate() {
-
     let basketContentHTML = '';
     let categories = Object.keys(menuItems);
 
@@ -97,8 +96,16 @@ function basketContentUpdate() {
             }
         }
     }
+    buildBasket(basketContentHTML);
+}
+
+function buildBasket(basketContentHTML) {
     document.getElementById('basket').innerHTML = basketContent();
     document.getElementById('basketContent').innerHTML = basketContentHTML;
+    checkboxCheck();
+}
+
+function checkboxCheck() {
     let checkbox = document.getElementById('flexSwitchCheckDefault');
     if (checkbox) {
         checkbox.checked = appSettings.pickup;

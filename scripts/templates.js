@@ -31,34 +31,36 @@ function cardContent(element, categoryKey, i, items) {
 
 function basketContent() {
     return `
-                    <button id="closeBasket" class="closeBasket" onclick="toggleBasket()"><img src="./assets/icons/close.png" alt=""></button>
-                    <div class="form-check form-switch">
-                    <input onchange="switchPickUp()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Selbstabholung</label>
-                    </div>
-                    <h2>Dein Warenkorb</h2>
-                    <div id="basketContent">
-                    </div>
-                    <table id="basketSum" class="basketSum" style="font-size: 20px">
-                        <tr>
-                            <td>Zwischensumme</td>
-                            <td id="subtotal">${basketSum.toFixed(2).replace(".", ",")}€</td>
-                        </tr>
-                        <tr>
-                            <td>Lieferkosten</td>
-                            <td id="shipping"></td>
-                        </tr>
-                        <tr class="line" style="border: 1px solid #FFFFFF">
-                        </tr>
-                        <tr>
-                            <td>Summe</td>
-                            <td id="total">${totalSum.toFixed(2).replace(".", ",")}€</td>
-                        </tr>
-                    </table>
-                    <button ${basketSum === 0 ? `disabled` : `onclick="buyNow()"`}>
-                        <h2>Jetzt kaufen</h2>
-                    </button>
-                    `
+<button id="closeBasket" class="closeBasket" onclick="toggleBasket()"><img src="./assets/icons/close.png"
+    alt="">
+</button>
+<div class="form-check form-switch">
+    <input onchange="switchPickUp()" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Selbstabholung</label>
+</div>
+<h2>Dein Warenkorb</h2>
+<div id="basketContent">
+</div>
+<table id="basketSum" class="basketSum" style="font-size: 20px">
+    <tr>
+        <td>Zwischensumme</td>
+        <td id="subtotal">${basketSum.toFixed(2).replace(".", ",")}€</td>
+    </tr>
+    <tr>
+        <td>Lieferkosten</td>
+        <td id="shipping"></td>
+    </tr>
+    <tr class="line" style="border: 1px solid #FFFFFF">
+    </tr>
+    <tr>
+        <td>Summe</td>
+        <td id="total">${totalSum.toFixed(2).replace(".", ",")}€</td>
+    </tr>
+</table>
+<button ${basketSum === 0 ? `disabled` : `onclick="buyNow()" `}>
+    <h2>Jetzt kaufen</h2>               
+</button>
+`
 }
 
 function basketContentRef(name, price, amount, categoryKey, i) {
