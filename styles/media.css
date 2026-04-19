@@ -251,7 +251,7 @@
     }
 
     .content {
-        width: 100vb;
+        width: 100vw;
     }
 
     .moto {
@@ -310,7 +310,7 @@
         height: 16px !important;
     }
 
-    .itemPrice{
+    .itemPrice {
         flex-grow: 1;
         text-align: right;
         padding-right: 16px;
